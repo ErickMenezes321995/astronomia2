@@ -1,0 +1,47 @@
+.register{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 50, 0.8)), url('../img/pagina1.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(75%);
+}
+.register h1{
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: oblique;
+    color: white;
+}
+.register span{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    padding: 5px;
+}
+
+.register a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 17px;
+    font-family: sans-serif;
+    font-style: italic;
+}
+
+.formregister{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+label{
+    color: white;
+    font-size: 15px;
+}
