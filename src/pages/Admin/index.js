@@ -57,20 +57,19 @@ export default function Admin(){
 
     return(
         <div className='admin-container register'>
-            <h1>minhas tarefas</h1>
+            <h1>teste de comentarios</h1>
 
             <form className='formregister' onSubmit={handleRegistre}>
                 <textarea
-                placeholder='Digite sua tarefa'
+                placeholder='Deixe seu comentario'
                 value={tarefaInput}
                 onChange={(e) => setTarefaInput(e.target.value)}/>
 
-                <button type='submit'>Registrar tarefa</button>
+                <button type='submit'>Registrar comentario</button>
             </form>
 
             <article className='list'>
-                <p>estudar</p>
-
+                
                 <div>
                     <button>Editar</button>
                     <button className='delete'>Concluir</button>
