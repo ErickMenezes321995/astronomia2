@@ -94,7 +94,7 @@ return (
     </div>
 
     <div className='exploração3'>
-      <div className='aprenda'> 
+      <div className='aprenda1'> 
         <img src={futuro}/>   
         <h1>Aprenda e participe!!</h1>
         <h3>Nosso site não é apenas para ler, mas também para interagir. Confira:</h3>

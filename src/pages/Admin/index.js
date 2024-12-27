@@ -1,83 +1,63 @@
-import {useState, useEffect} from 'react'
 import './admin.css'
-
-import {auth,db} from '../../firebaseConnection'
+import {auth} from '../../firebaseConnection'
 import { signOut } from 'firebase/auth'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-import {
-    addDoc,
-    collection
-} from 'firebase/firestore'
+const admin = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
+  useEffect(() => {
+    const fetchAPOD = async () => {
+      try {
+        const response = await axios.get("https://api.nasa.gov/planetary/apod", {
+          params: {
+            api_key: "vugKMKvHxRBfJggIzv8IAI63mpjZbTIz6k5twtbw", // Substitua pela sua chave
+          },
+        });
+        setData(response.data);
+      } catch (error) {
+        setError("Erro ao carregar os dados da API.");
+      } finally {
+        setLoading(false);
+      }
+    };
 
+    fetchAPOD();
+  }, []);
 
-export default function Admin(){
+  if (loading) return <p>Carregando...</p>;
+  if (error) return <p>{error}</p>;
 
-    const [tarefaInput, setTarefaInput] = useState('')
-    const [user, setUser] = useState({})
-
-    useEffect(() =>{
-        async function loadTarefas(){
-
-            const userDetail = localStorage.getItem("@detailUser")
-
-            setUser(JSON.parse(userDetail))
-        }
-
-        loadTarefas();
-    },[])
-
-     async function handleRegistre(e){
-        e.preventDefault();
-        
-
-        if(tarefaInput === ''){
-            alert('Digite sua tarefa')
-            return;
-        }
-
-        await addDoc(collection(db, "tarefas"), {
-            tarefa: tarefaInput,
-            created: new Date(),
-            userUid: user?.uid,
-        })
-        .then(()=>{
-            console.log('tarefa registrada')
-            setTarefaInput('');
-
-        })
-        .catch((error)=>{
-            alert("error"+ error)
-        })
-    }
-
-    async function handleLogout(){
-        await signOut(auth);
-    }
-
-    return(
-        <div className='admin-container register'>
-            <h1>teste de comentarios</h1>
-
-            <form className='formregister' onSubmit={handleRegistre}>
-                <textarea
-                placeholder='Deixe seu comentario'
-                value={tarefaInput}
-                onChange={(e) => setTarefaInput(e.target.value)}/>
-
-                <button type='submit'>Registrar comentario</button>
-            </form>
-
-            <article className='list'>
-                
-                <div>
-                    <button>Editar</button>
-                    <button className='delete'>Concluir</button>
-                </div>
-            </article>
-
-            <button className='btn-logout' onClick={handleLogout}>sair</button>
-            
-        </div>
-    )
+  async function handleLogout(){
+    await signOut(auth);
 }
+
+  return (
+    <div>
+      <h1>{data.title}</h1>
+      {data.media_type === "image" ? (
+        <img
+          src={data.url}
+          alt={data.title}
+          style={{ maxWidth: "100%", height: "auto" }}
+        />
+      ) : (
+        <iframe
+          src={data.url}
+          title={data.title}
+          width="100%"
+          height="500px"
+        ></iframe>
+      )}
+      <p>{data.explanation}</p>
+      <p><strong>Data:</strong> {data.date}</p>
+      <button className='btn-logout' onClick={handleLogout}>sair</button>
+    </div>
+  );
+};
+
+export default admin;
+

@@ -226,6 +226,31 @@
     font-style: italic;
 }
 
+@media (max-width: 768px){
+    .exploração2{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 250px;
+    }
+
+    .lua{
+        font-size: 18px;
+        padding: 0px;
+    }
+
+    .sol{
+        font-size: 18px;
+        padding: 0px;
+    }
+
+    .marte{
+        font-size: 18px;
+        padding: 0px;
+    }
+}
+
 .exploração3{
     padding: 15px;
     padding-top: 120px;
@@ -233,11 +258,21 @@
     justify-content: center;
     align-items: center;
     flex-direction: inherit;
-    text-align: center;
-    
+    text-align: center;   
 }
+
+@media (max-width: 768px){
+    .exploração3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 250px;
+    }
+}
+
  
-.aprenda{
+.aprenda1{
     width: 100%;
     border: 1px solid white;
     padding: 15px;
@@ -250,11 +285,30 @@
     filter: brightness(75%);
 
 }
-.aprenda img{
+.aprenda1 img{
     width: 250px;
     float: left;
     margin-top: -310px;
     margin-bottom: -50px;
+}
+
+@media (max-width: 768px){
+
+    .aprenda1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 250px;
+
+    }
+
+    .aprenda1 img{
+        width: 100px;
+        margin-top: -192px;
+        margin-bottom: 3px;
+       
+    }
 }
 
 .partial{
@@ -299,6 +353,32 @@
     font-style: italic;
 }
 
+@media (max-width: 768px){
+    .partial{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 250px;
+        gap: 0px;
+        padding: 0px;
+    }
+
+    .part1{
+        font-size: 18px;
+        padding: 5px;
+    }
+
+    .part2{
+        font-size: 18px;
+        padding: 5px;
+    }
+
+    .part3{
+        font-size: 18px;
+        padding: 5px;
+    }
+}
 
 footer{
     display: flex;
