@@ -9,6 +9,7 @@
 }
 
 .nasa{
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,6 +17,7 @@
     padding:20px;
     color: aliceblue;
     width: 700px;
+    border-radius: 20px;
 }
 
 .nasa img{
@@ -27,7 +29,7 @@
     justify-content: space-around;
     width: 100%;
     background-color: black;
-    padding:20px;
+    padding:10px;
     color: aliceblue;
-    padding: 10px;
+  
 }
