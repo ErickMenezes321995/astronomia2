@@ -4,7 +4,7 @@ import { signOut } from 'firebase/auth'
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const admin = () => {
+const NASA_APOD = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -59,5 +59,5 @@ const admin = () => {
   );
 };
 
-export default admin;
+export default NASA_APOD;
 
