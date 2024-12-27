@@ -14,7 +14,7 @@ const NASA_APOD = () => {
       try {
         const response = await axios.get("https://api.nasa.gov/planetary/apod", {
           params: {
-            api_key: "vugKMKvHxRBfJggIzv8IAI63mpjZbTIz6k5twtbw", // Substitua pela sua chave
+            api_key: "vugKMKvHxRBfJggIzv8IAI63mpjZbTIz6k5twtbw", // chave
           },
         });
         setData(response.data);
@@ -36,7 +36,8 @@ const NASA_APOD = () => {
 }
 
   return (
-    <div>
+    <div className='foto1'>
+       <button className='btn-logout' onClick={handleLogout}>sair</button>
       <h1>{data.title}</h1>
       {data.media_type === "image" ? (
         <img
@@ -54,7 +55,6 @@ const NASA_APOD = () => {
       )}
       <p>{data.explanation}</p>
       <p><strong>Data:</strong> {data.date}</p>
-      <button className='btn-logout' onClick={handleLogout}>sair</button>
     </div>
   );
 };
