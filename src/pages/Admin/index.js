@@ -37,7 +37,14 @@ const NASA_APOD = () => {
 
   return (
     <div className='APInasa'>
-       <button className='btn-sair' onClick={handleLogout}>sair</button>
+      <div className='top'>
+        <div className='logoadmin'>
+          <p>logo</p>
+        </div>
+        <div className='redes'>
+          <button className='btn-sair' onClick={handleLogout}>sair</button>
+        </div>
+      </div>
        <div className='nasa'>
       <h1>{data.title}</h1>
       {data.media_type === "image" ? (
