@@ -37,7 +37,8 @@ const NASA_APOD = () => {
 
   return (
     <div className='APInasa'>
-       <button className='btn-logout' onClick={handleLogout}>sair</button>
+       <button className='btn-sair' onClick={handleLogout}>sair</button>
+       <div className='nasa'>
       <h1>{data.title}</h1>
       {data.media_type === "image" ? (
         <img
@@ -55,6 +56,7 @@ const NASA_APOD = () => {
       )}
       <p>{data.explanation}</p>
       <p><strong>Data:</strong> {data.date}</p>
+      </div>
     </div>
   );
 };
