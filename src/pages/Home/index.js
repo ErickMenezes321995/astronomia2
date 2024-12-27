@@ -3,7 +3,7 @@ import { useState } from'react';
 import './style.css'
 import astro from '../img/astro.png'
 import futuro from '../img/futuro.png'
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../../firebaseConnection'
 import {signInWithEmailAndPassword} from 'firebase/auth'
 
@@ -73,7 +73,7 @@ return (
 
   <div className='conteudo1'>
     <div className='exploração'>
-      <img src={astro}/>
+      <img src={astro} alt='imagem de logo'/>
       <h2>Bem-vindo ao Universo Fascinante da Astronomia!</h2>
     </div>
 
@@ -95,7 +95,7 @@ return (
 
     <div className='exploração3'>
       <div className='aprenda1'> 
-        <img src={futuro}/>   
+        <img src={futuro} alt='imagem de texto'/>   
         <h1>Aprenda e participe!!</h1>
         <h3>Nosso site não é apenas para ler, mas também para interagir. Confira:</h3>
       </div>
