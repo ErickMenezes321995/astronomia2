@@ -36,7 +36,7 @@ const NASA_APOD = () => {
 }
 
   return (
-    <div className='foto1'>
+    <div className='APInasa'>
        <button className='btn-logout' onClick={handleLogout}>sair</button>
       <h1>{data.title}</h1>
       {data.media_type === "image" ? (
