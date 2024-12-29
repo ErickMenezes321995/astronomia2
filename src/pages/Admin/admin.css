@@ -4,7 +4,10 @@
     align-items: center;
     padding: 0px;
     color: aliceblue;
-    background-color: #000120;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 50, 0.8)), url('../img/pagina1.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(90%);
 }
 
 .nasa{
@@ -50,7 +53,7 @@
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    background-color: cadetblue;
+    background-color: darkslateblue;
     padding:10px;
     color: black;
 }
@@ -60,4 +63,16 @@
     color: white;
     background-color: lightseagreen;
     cursor: pointer;
+}
+
+.noticias{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding:20px;
+    color: black;
+    width: 700px;
+    border-radius: 20px;
 }
