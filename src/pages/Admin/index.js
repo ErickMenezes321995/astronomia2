@@ -12,11 +12,6 @@ const NASA_APOD = () => {
   const [news, setNews] = useState(null); // Armazena um único artigo
   const [newsLoading, setNewsLoading] = useState(true); // Carregamento das notícias
   const [newsError, setNewsError] = useState(null); // Erros nas notícias
-
-  const [neusData, setNeusData] = useState(null);
-  const [neusLoading, setNeusLoading] = useState(true);
-  const [neusError, setNeusError] = useState(null);
-
   
 
   useEffect(() => {
