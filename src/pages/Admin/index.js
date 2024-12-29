@@ -13,6 +13,12 @@ const NASA_APOD = () => {
   const [newsLoading, setNewsLoading] = useState(true); // Carregamento das notícias
   const [newsError, setNewsError] = useState(null); // Erros nas notícias
 
+  const [neusData, setNeusData] = useState(null);
+  const [neusLoading, setNeusLoading] = useState(true);
+  const [neusError, setNeusError] = useState(null);
+
+  
+
   useEffect(() => {
     // Função para buscar dados da NASA
     const fetchAPOD = async () => {
@@ -50,6 +56,7 @@ const NASA_APOD = () => {
     };
 
     // Chama ambas as funções
+
     fetchAPOD();
     fetchNews();
   }, []);
@@ -98,7 +105,7 @@ const NASA_APOD = () => {
         </p>
       </div>
 
-      {/* Notícia Espacial */}
+      
       <div className="noticias">
         <h1>Notícia Espacial</h1>
         {news && (
